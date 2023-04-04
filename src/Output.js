@@ -10,7 +10,6 @@ import Boroughs from './boroughs.geojson';
 import * as turf from '@turf/turf';
 
 const Output = (props) => {
-  const [chosenBoroughs, setChosenBoroughs] = useState(props.boroughs);
   const [time, setTime] = useState(props.time);
   const [coords, setCoords] = useState();
   const [paint, setPaint] = useState(props.paint);
@@ -42,7 +41,7 @@ const Output = (props) => {
   useEffect(() => {
 	let chosenBoroughs = Object.keys(props.chosenBoroughs).filter(key => props.chosenBoroughs[key]);
 	if (chosenBoroughs.length) { 
-	  let newCoords = fetchCoords(chosenBoroughs); 
+	  fetchCoords(chosenBoroughs); 
 	}
 	setTime(props.time);
 	setPaint(props.paint);

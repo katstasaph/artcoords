@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css';
 import Settings from './Settings';
 import About from './About';
 import Output from './Output';
