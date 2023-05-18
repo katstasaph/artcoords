@@ -5,6 +5,7 @@ import Map from './Map';
 import Time from './Time';
 import Paint from './Paint';
 import Canvas from './Canvas';
+import SaveForm from './Save';
 
 import Boroughs from './boroughs.geojson';
 import * as turf from '@turf/turf';
@@ -54,8 +55,11 @@ const Output = (props) => {
   if (Object.keys(props.chosenBoroughs).filter(key => props.chosenBoroughs[key]).length) {
     coordDisplay = <CoordOutput coords={coords} />
 	mapDisplay = <Map coords={coords} />
-	timeDisplay = <Time time={time} submitted={props.submitted} />;
   }
+  
+  if (time.start != '' && time.end != '') {
+    timeDisplay = <Time time={time} submitted={props.submitted} />; 
+  }	  
   
   let paintDisplay = "";
   if (paint) {
@@ -74,6 +78,7 @@ const Output = (props) => {
 	{timeDisplay}
 	{paintDisplay}
 	{canvasDisplay}
+	<SaveForm coords={coords} />
     </div>
   );
 };

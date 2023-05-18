@@ -58,11 +58,19 @@ body {
  width: 550px;
 }
 
+.modal {
+  position: absolute;
+}
+
 .box {
   height: 20px;
   width: 20px;
   margin-bottom: 15px;
   border: 1px solid black;
+}
+
+img:hover {
+  opacity: 80%;
 }
 
 .canvas {

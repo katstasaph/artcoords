@@ -1,6 +1,7 @@
 // info
 
 import { useState } from 'react';
+import Gallery from './Gallery';
 
 const AboutText = () => {
   return (
@@ -8,15 +9,6 @@ const AboutText = () => {
     <p>This tool was created for artist <a href="http://www.klayjamesenos.com">Klay-James Enos</a> for his Algorithmic Field Painting series. The tool generates a number of constraints to plan a plein air painting: the geographic location of the painting site, to the time of day to begin painting, the underlying grid and color structure of the painting base, and the paints to use on site.</p>
     <p>"Quantification has become a normalized fixture of life, and geotracking is carried out with our tacit consent. Randomness is only the departure point for the de-systemizing of creative choices that may eventually yield spontaneous emotion."</p>
     </div>
-  );
-}
-
-const ImageDisplay = () => {
-  return (
-    <div>
-	<p><img src="./painting1.jpg" width="33%" height="33%" /> <img src="./canvas1.png" height="33%" width="33%" /> &nbsp; &nbsp; <img src="./map1.png" width="27%" height="27%" /></p>
-	<p> <em>Algorithmic Field Painting #1</em> (2021): 16 in. x 29 in. </p>
-	</div>
   );
 }
 
@@ -39,7 +31,7 @@ const About = () => {
     pane = <AboutText />;
   }
   else if (imageExpanded) {
-    pane = <ImageDisplay />;
+    pane = <Gallery />;
   }
   
   return (

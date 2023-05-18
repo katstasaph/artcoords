@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 const Settings = (props) => {
   const [boroughs, setBoroughs] = useState(props.boroughs);
+  const [timeDisabled, setTimeDisabled] = useState(true);
   const [time, setTime] = useState(props.time);	
   const [paint, setPaint] = useState(props.paint);	
   const [canvas, setCanvas] = useState(props.canvas);	
@@ -12,6 +13,18 @@ const Settings = (props) => {
 	newBoroughs[checkedBorough] = event.target.checked;
     setBoroughs(newBoroughs);
   };
+  
+   const handleTimeToggle = (event) => {
+    setTimeDisabled(!timeDisabled);	
+	if (!timeDisabled) {
+	  time.start = ''
+	  time.end = ''
+	}
+	else {
+	  time.start = '8:00'
+      time.end = '16:00'	  
+	}
+  } 
   
   const handleTimeChange = (event) => {
     let newTime = {...time};
@@ -36,6 +49,7 @@ const Settings = (props) => {
   return (
         <form onSubmit={formSubmit}>
         <div>
+		<h4>Location settings</h4>
         <p>Which boroughs would you like to include?</p>
         </div>
         <div className="radio">
@@ -85,11 +99,24 @@ const Settings = (props) => {
             Staten Island
           </label>
         </div>
-				<div className="textbox">
+		<div className="textbox">
+		<h4>Time settings</h4>
+		<div className="checkbox">
+		<label>
+			<input
+			  name = "timetoggle"
+			  type = "checkbox"
+			  checked = {!timeDisabled}
+			  onChange={handleTimeToggle}
+			/>
+			Set time constraints?
+		</label>
+		</div>		
 		Earliest start (use military time): &nbsp;
 		<label>
 			<input
 			  name = "start"
+			  disabled = {timeDisabled}
 			  value = {time.start}
 			  type = "text"
 			  maxLength = "5"
@@ -101,6 +128,7 @@ const Settings = (props) => {
 			Latest start (use military time): &nbsp;
 			<input
 			  name = "end"
+			  disabled = {timeDisabled}
 			  value = {time.end}
 			  type = "text"
 			  maxLength = "5"
@@ -109,6 +137,7 @@ const Settings = (props) => {
 			/>
 		</label>
 		</div>
+		<h4>Canvas settings</h4>
 		<div className="checkbox">
 		<label>
 			<input
