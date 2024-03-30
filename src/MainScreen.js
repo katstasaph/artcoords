@@ -19,6 +19,15 @@ import Settings from './Settings';
 import About from './About';
 import Output from './Output';
 
+const Header = () => {
+  return (
+    <div className="header">
+	    <h3>art coordinates</h3>
+	    <p>a generator of algorithmic field painting coordinates and constraints</p>
+	</div>
+  );
+}
+
 const MainScreen = () => {
   const [submitted, setSubmitted] = useState(false);	
   const initBoroughs = {manhattan: false, queens: false, brooklyn: false, bronx: false, staten: false};	
@@ -38,14 +47,18 @@ const MainScreen = () => {
   };
 
   return (
-    <div>
-	  <h3>art coordinates</h3>
-	  <p>a generator of algorithmic field painting coordinates and constraints</p>
-	  <About /> 
-	  <hr />
-      <Settings boroughs={boroughs} time={time} paint={paint} canvas={canvas} submitFormData={submitFormData} />
-	  <Output chosenBoroughs={boroughs} time={time} paint={paint} canvas={canvas} submitted={submitted} />
-    </div>
+    <>  
+    <Header /> 
+    <About /> 
+      <div class="maincontainer">
+      <div className="leftpanel">
+        <Settings boroughs={boroughs} time={time} paint={paint} canvas={canvas} submitFormData={submitFormData} />
+	  </div>
+	  <div className="rightpanel">
+	    <Output chosenBoroughs={boroughs} time={time} paint={paint} canvas={canvas} submitted={submitted} />
+      </div>
+	</div>
+	</>
   );
 }
 

@@ -16,9 +16,9 @@ const Map = (props) => {
   }	
   
   return (
-      <div>
-	  <a href={url} target="_blank">View on map</a>
-      </div>
+      <>
+      <a href={url} target="_blank">(View map)</a>
+	  </>
     );
 }
 

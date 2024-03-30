@@ -49,6 +49,7 @@ const Settings = (props) => {
   return (
         <form onSubmit={formSubmit}>
         <div>
+		<h3>Settings</h3>
 		<h4>Location settings</h4>
         <p>Which boroughs would you like to include?</p>
         </div>

@@ -10,8 +10,8 @@ const Paint = (props) => {
   }, [props.submitted]);
  
   const choosePaints = () => {
-	const paints = ["titanium white", "lemon yellow", "yellow ochre", "raw sienna", "indian red", "light red", "medium red", "alizarin crimson", "ultramarine blue", "cobalt blue",
-	"viridian", "chrome green", "black"];
+	const paints = ["titanium white", "cadmium yellow light", "cadmium yellow medium", "yellow ochre", "raw sienna", "mars red", "cadmium red light", "cadmium red medium", "alizarin crimson",
+	"ultramarine blue", "cobalt blue", "viridian green", "chrome green", "ivory black"];
 	let chosen = [];
 	let chance = Math.floor((Math.random() * 66) + 1);
 	let guaranteed = Math.floor(Math.random() * paints.length);
@@ -24,9 +24,9 @@ const Paint = (props) => {
   }
 
   return (
-    <div>
-	Paints chosen: {paintList}
-	</div>
+  <>
+	<br/><span><strong>Paints chosen:</strong> {paintList}</span>
+  </>
   );  
 }
 

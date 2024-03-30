@@ -57,7 +57,7 @@ const Output = (props) => {
 	mapDisplay = <Map coords={coords} />
   }
   
-  if (time.start != '' && time.end != '') {
+  if (time.start !== '' && time.end !== '') {
     timeDisplay = <Time time={time} submitted={props.submitted} />; 
   }	  
   
@@ -72,15 +72,17 @@ const Output = (props) => {
   }	
   
   return (
-    <div>
+    <>
+	<h3>Painting constraints</h3>
 	{coordDisplay}
 	{mapDisplay}
 	{timeDisplay}
 	{paintDisplay}
 	{canvasDisplay}
-	<SaveForm coords={coords} />
-    </div>
+    < />
   );
 };
+
+// 	<SaveForm coords={coords} />
 
 export default Output;

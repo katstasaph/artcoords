@@ -17,7 +17,7 @@ const CoordOutput = (props) => {
   	
   return (
     <div className="coords">
-      Coordinates: {chosenCoord}
+      <p><strong>Coordinates:</strong> {chosenCoord}</p>
     </div>
   );
 }

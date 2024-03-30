@@ -78,11 +78,11 @@ const Canvas = (props) => {
 
   return (
     <div>
-	  <p>Canvas dimensions: {length} x {height} </p>
-	  <p>Length stops: {lengthStops.join(", ")}</p>
-	  <p>Height stops: {heightStops.join(", ")}</p>
-	  <p>Canvas underpainting template:</p>
+	  <p><strong>Canvas dimensions:</strong> {length} x {height}</p>
+	  <p><strong>Canvas underpainting template:</strong></p>
 	    {display}
+	  <p><strong>Width stops:</strong> {lengthStops.join(", ")}</p>
+	  <p><strong>Height stops:</strong> {heightStops.join(", ")}</p>
 	</div>
   );  
 }

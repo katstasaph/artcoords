@@ -49,9 +49,10 @@ const Time = (props) => {
   }, [props.submitted]);
   
    return (
-      <div>
-	  Start painting at: {timeToPaint}
-      </div>
+      <>
+	  <br/>
+	  <span><strong>Start painting at:</strong> {timeToPaint}</span>
+      </>
     );
 }
 

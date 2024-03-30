@@ -35,7 +35,7 @@ const About = () => {
   }
   
   return (
-    <div>
+    <div className="header">
       <strong><span onClick={(e)=> toggleAbout(e)}>
       About</span>  &nbsp; &nbsp; &nbsp;  <span onClick={(e)=> toggleImage(e)}>
       Gallery</span></strong>
