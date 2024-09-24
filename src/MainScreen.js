@@ -7,7 +7,6 @@
 // Add slideshow feature and other pics to gallery pane
 // Style selected about/gallery pane 
 // "Boroughs" singular
-// Fix the paint names to what klay said
 // Klay wants me to widen the time input fields for some reason
 // Fix the title and the auto-preview desc
 // Sunrise/sunset
@@ -50,7 +49,7 @@ const MainScreen = () => {
     <>  
     <Header /> 
     <About /> 
-      <div class="maincontainer">
+      <div className="maincontainer">
       <div className="leftpanel">
         <Settings boroughs={boroughs} time={time} paint={paint} canvas={canvas} submitFormData={submitFormData} />
 	  </div>
