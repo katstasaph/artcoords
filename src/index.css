@@ -25,7 +25,8 @@ body {
 
 .maincontainer {
   width: 1200px;
-  height: 600px;
+  min-height: 600px;
+  height: auto;
   display: flex;
   flex-flow: row;
   justify-content: flex-start;
