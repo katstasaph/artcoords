@@ -21,7 +21,7 @@ const Settings = (props) => {
 	  time.end = ''
 	}
 	else {
-	  time.start = '8:00'
+	  time.start = '08:00'
       time.end = '16:00'	  
 	}
   } 
@@ -100,7 +100,6 @@ const Settings = (props) => {
             Staten Island
           </label>
         </div>
-		<div className="textbox">
 		<h4>Time settings</h4>
 		<div className="checkbox">
 		<label>
@@ -113,30 +112,29 @@ const Settings = (props) => {
 			Set time constraints?
 		</label>
 		</div>		
-		Earliest start (use military time): &nbsp;
-		<label>
-			<input
+		  <div className="textbox">
+			{!timeDisabled && 
+			<label for="start">Earliest start:</label>}
+			{!timeDisabled && <input
+			  id = "start"
 			  name = "start"
 			  disabled = {timeDisabled}
 			  value = {time.start}
-			  type = "text"
-			  maxLength = "5"
-			  size = "1"
+			  type = "time"
 			  onChange={handleTimeChange}
-			/> &nbsp;
-		</label>
-		<label>
-			Latest start (use military time): &nbsp;
-			<input
+			/>}
+		</div>
+		<div className="textbox">
+			{!timeDisabled && 
+			<label for="end">Latest start:</label>}
+			{!timeDisabled && <input
+			  id = "end"
 			  name = "end"
 			  disabled = {timeDisabled}
 			  value = {time.end}
-			  type = "text"
-			  maxLength = "5"
-			  size = "1"
+			  type = "time"
 			  onChange={handleTimeChange}
-			/>
-		</label>
+			/>}
 		</div>
 		<h4>Canvas settings</h4>
 		<div className="checkbox">

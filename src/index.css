@@ -87,3 +87,16 @@ input[type="checkbox"] {
  border: 2px solid #0000BB;
  border-radius: 6px;
 }
+
+.textbox {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="time"] {
+  width: 10vw;
+}
+
+.textbox[disabled=true] {
+  display: none;
+}
