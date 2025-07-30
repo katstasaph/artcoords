@@ -63,6 +63,7 @@ header {
   background-color: rgba(100, 100, 133, 15%);
   box-shadow: #666 0 0 2px inset;
   overflow: auto;  
+<<<<<<< HEAD
 }
 
 .modal {
@@ -98,7 +99,6 @@ header {
   height: 75%;
   width: 75%;
   object-fit: contain;
-}
 
 img:hover {
   opacity: 80%;
@@ -134,6 +134,7 @@ input[type="time"] {
 
 .textbox[disabled=true] {
   display: none;
+<<<<<<< HEAD
 }
 
 ul {
