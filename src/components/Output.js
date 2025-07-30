@@ -7,7 +7,7 @@ import Paint from './Paint';
 import Canvas from './Canvas';
 import SaveForm from './Save';
 
-import Boroughs from './boroughs.geojson';
+import Boroughs from '../boroughs.geojson';
 import * as turf from '@turf/turf';
 
 const Output = (props) => {

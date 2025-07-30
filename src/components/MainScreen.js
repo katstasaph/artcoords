@@ -7,8 +7,6 @@
 // Add slideshow feature and other pics to gallery pane
 // Style selected about/gallery pane 
 // "Boroughs" singular
-// Fix the paint names to what klay said
-// Klay wants me to widen the time input fields for some reason
 // Fix the title and the auto-preview desc
 // Sunrise/sunset
 
@@ -16,17 +14,7 @@
 
 import { useState, useEffect } from 'react'
 import Settings from './Settings';
-import About from './About';
 import Output from './Output';
-
-const Header = () => {
-  return (
-    <div className="header">
-	    <h3>art coordinates</h3>
-	    <p>a generator of algorithmic field painting coordinates and constraints</p>
-	</div>
-  );
-}
 
 const MainScreen = () => {
   const [submitted, setSubmitted] = useState(false);	
@@ -48,16 +36,12 @@ const MainScreen = () => {
 
   return (
     <>  
-    <Header /> 
-    <About /> 
-      <div class="maincontainer">
       <div className="leftpanel">
         <Settings boroughs={boroughs} time={time} paint={paint} canvas={canvas} submitFormData={submitFormData} />
 	  </div>
 	  <div className="rightpanel">
 	    <Output chosenBoroughs={boroughs} time={time} paint={paint} canvas={canvas} submitted={submitted} />
       </div>
-	</div>
 	</>
   );
 }
