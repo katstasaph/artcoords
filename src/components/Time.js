@@ -1,6 +1,6 @@
 // time of day
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { getSunrise, getSunset } from 'sunrise-sunset-js';
 
 const Time = (props) => {
@@ -32,7 +32,7 @@ const Time = (props) => {
     }
   } 
 
-  const chooseTime = (timeBounds) => {
+  const chooseTime = useCallback((timeBounds) => {
     let startTime = convertTime(parseTimeInput(timeBounds.start), true);
     let endTime = convertTime(parseTimeInput(timeBounds.end), false); // TODO: Do auto-military time automatically
     let startMinutes = (startTime[0] * 60) + startTime[1]; // we are doing it this way because the sunrise/sunset library can be off by 1 day
@@ -42,11 +42,11 @@ const Time = (props) => {
     let chosenMinutes = chosenTime - (chosenHours * 60);
     if (chosenMinutes < 10) { chosenMinutes = "0" + chosenMinutes };
     return (chosenHours + ":" + chosenMinutes);
-   }
+   }, []);
 
   useEffect(() => {
     setTimeToPaint(chooseTime(props.time));
-  }, [props.submitted]);
+  }, [props.submitted, props.time, chooseTime]);
   
    return (
       <>
