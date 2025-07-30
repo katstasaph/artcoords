@@ -1,4 +1,6 @@
-const PaintingModal = ({ handleClose }) => {
+const PaintingModal = ({ constraints, handleClose }) => {
+
+  console.log(constraints)
   
   const closeModal = (event) => {
     event.stopPropagation();
@@ -6,17 +8,25 @@ const PaintingModal = ({ handleClose }) => {
   };
 
   return (
-  <>
+    <>
     <div className="modal" onClick={event => closeModal(event)} >
 	  <div className="modalContainer">
-  	    <h4>Algorithmic Field Painting #1</h4>
-		<img src="./painting1.jpg" alt="Algorithmic Field Painting"/>
+  	    <h4>Algorithmic Field Painting #{constraints.id}, {constraints.year}, oil on canvas</h4>
+		<img src={`painting${constraints.id}.jpg`} alt="Algorithmic Field painting"/>
 		<h4>Constraints:</h4>
-		Some cool constraints
+		  <ul className="paintingModal">
+		    <li className="paintingModal"><strong>Boroughs:</strong> {constraints.boroughs}</li>
+		    <li className="paintingModal"><strong>Coordinates: </strong> {constraints.coordinates} </li>
+		    <li className="paintingModal"><strong>Start time:</strong> {constraints.start} </li>
+		    <li className="paintingModal"><strong>Paints for underpainting</strong>: {constraints.paints}</li>
+		    <li className="paintingModal"><strong>Canvas dimensions:</strong> {constraints.dimensions}</li>
+		    <li className="paintingModal"><strong>Width stops:</strong> {constraints.widths} </li>
+		    <li className="paintingModal"><strong>Height stops:</strong> {constraints.heights} </li>
+		  </ul>
 		<h4>Location</h4>
-		<img src="./map1.png" alt="Algorithmic Field Painting 1 location" />
+		<img src={`map${constraints.id}.png`} alt="Algorithmic Field Painting location" />
         <h4>Underpainting</h4>
-		<img src="./canvas1.png" alt="Algorithmic Field Painting 1 underpainting" />
+		<img src={`canvas${constraints.id}.png`} alt="Algorithmic Field Painting underpainting" />
       </div>
     </div>
   </>
