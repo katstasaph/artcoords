@@ -71,7 +71,7 @@ const ImageDisplay = () => {
       <PaintingModal constraints={paintingData[currentPaintingId]} handleClose={closeModal} />,
       document.body
     )}
-	<p><em>Algorithmic Field Painting #{currentPaintingId + 1}</em> ({paintingData[currentPaintingId].year}), oil on canvas</p>
+	<p><em>Algorithmic Field Painting #{currentPaintingId + 1}</em>, {paintingData[currentPaintingId].year}, oil on canvas</p>
 	</div>
 	</>
   );

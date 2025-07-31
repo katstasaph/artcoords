@@ -1,16 +1,13 @@
 // TODO:
-// Randomize the orientation of the grid so it is not always weighted to one end
-// Fix the async!!
+// Tweak the generation of height/width stops so the grid is not always weighted to one end
+// Improve timing of coord generator/add placeholder
 // Fix the issue with the background resizing
 // choose seed/database?
 // Height by width order, not width by height -- reverse what you have
-// Add slideshow feature and other pics to gallery pane
-// Style selected about/gallery pane 
+// Continue selected about/gallery pane 
 // "Boroughs" singular
 // Fix the title and the auto-preview desc
 // Sunrise/sunset
-
-// Parent component for child elements
 
 import { useState, useEffect } from 'react'
 import Settings from './Settings';
