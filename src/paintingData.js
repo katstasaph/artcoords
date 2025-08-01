@@ -113,6 +113,7 @@ const paintingData = [
     id: 11,
 	year: "2023",
 	boroughs: "Manhattan, Queens",
+	coordinates: "40.808510, -73.954945",
 	start: "12:26 PM",
 	paints: "cadmium yellow light",
 	dimensions: "38 x 15",
@@ -123,6 +124,7 @@ const paintingData = [
     id: 12,
 	year: "2024",
 	boroughs: "Manhattan, Queens",
+	coordinates: "40.722726, -73.978348",
 	start: "3:28 PM",
 	paints: "cadmium yellow light, raw sienna, mars red, cadmium red medium, ultramarine blue, cobalt blue, viridian green, chrome green, ivory black",
 	dimensions: "29 x 46",
@@ -208,6 +210,7 @@ const paintingData = [
   },
   {
     id: 20,
+	year: "2025",
 	boroughs: "Manhattan, Queens, The Bronx",
 	coordinates: "40.842277, -73.785836",
 	start: "9:48 AM",
@@ -218,6 +221,7 @@ const paintingData = [
   },
   {
     id: 21,
+	year: "2025",
 	boroughs: "Manhattan, Queens, The Bronx",
 	coordinates: "40.824480, -73.824308",
 	start: "2:34 PM",
@@ -225,6 +229,17 @@ const paintingData = [
 	dimensions: "35 x 26",
 	widths: "15, 18, 20, 22, 25, 35",
 	heights: "9, 13, 26"
+  },
+  {
+    id: 22,
+	year: "2025",
+	boroughs: "Coming soon...",
+	coordinates: "",
+	start: "",
+	paints: "",
+	dimensions: "",
+	widths: "",
+	heights: ""
   }
 ]
 

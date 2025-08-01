@@ -1,6 +1,4 @@
 const PaintingModal = ({ constraints, handleClose }) => {
-
-  console.log(constraints)
   
   const closeModal = (event) => {
     event.stopPropagation();
@@ -24,7 +22,7 @@ const PaintingModal = ({ constraints, handleClose }) => {
 		    <li className="paintingModal"><strong>Height stops:</strong> {constraints.heights} </li>
 		  </ul>
 		<h4>Location</h4>
-		<img src={`map${constraints.id}.png`} alt="Algorithmic Field Painting location" />
+		<img className="bordered" src={`map${constraints.id}.png`} alt="Algorithmic Field Painting location" />
         <h4>Underpainting</h4>
 		<img src={`canvas${constraints.id}.png`} alt="Algorithmic Field Painting underpainting" />
       </div>
