@@ -93,6 +93,11 @@ header {
   overflow-y: auto;
 }
 
+.large {
+  width: 1000px;
+  padding: 5px 40px 20px 40px;
+}
+
 .modalContainer img {
   height: 75%;
   width: 75%;
@@ -169,4 +174,8 @@ ul {
   width: 25%;
   height: 25%;
   object-fit: contain;
+}
+
+.bordered {
+  border: 2px solid #111;
 }
