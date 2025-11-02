@@ -8,7 +8,7 @@ const PaintingModal = ({ constraints, handleClose }) => {
   return (
     <>
     <div className="modal" onClick={event => closeModal(event)} >
-	  <div className="modalContainer">
+	  <div className="modalContainer" onClick={event => event.stopPropagation() >
   	    <h4>Algorithmic Field Painting #{constraints.id}, {constraints.year}, oil on canvas</h4>
 		<img src={`painting${constraints.id}.jpg`} alt="Algorithmic Field painting"/>
 		<h4>Constraints:</h4>

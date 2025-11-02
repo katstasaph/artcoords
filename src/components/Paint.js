@@ -27,7 +27,7 @@ const Paint = (props) => {
     const paints = [
       { color: "titanium white", hex: "#F3F4F7" },
 	  { color: "cadmium yellow light", hex: "#FDE55D" },
-	  { color: "cadmium yelow medium", hex: "#FDDA0D" },
+	  { color: "cadmium yellow medium", hex: "#FDDA0D" },
 	  { color: "yellow ochre", hex: "#EDB525" },
 	  { color: "raw sienna", hex: "#D27D46" },
 	  { color: "mars red", hex: "#A1251B" },
