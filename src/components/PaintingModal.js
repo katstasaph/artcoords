@@ -11,7 +11,7 @@ const PaintingModal = ({ constraints, handleClose }) => {
 	  <div className="modalContainer" onClick={event => event.stopPropagation()} >
   	    <h4>Algorithmic Field Painting #{constraints.id}, {constraints.year}, oil on canvas</h4>
 		<img src={`painting${constraints.id}.jpg`} alt="Algorithmic Field painting"/>
-		<h4>Constraints:</h4>
+		<h4>Constraints</h4>
 		  <ul className="paintingModal">
 		    <li className="paintingModal"><strong>Boroughs:</strong> {constraints.boroughs}</li>
 		    <li className="paintingModal"><strong>Coordinates: </strong> {constraints.coordinates} </li>
@@ -23,6 +23,8 @@ const PaintingModal = ({ constraints, handleClose }) => {
 		  </ul>
 		<h4>Location</h4>
 		<img className="bordered" src={`map${constraints.id}.png`} alt="Algorithmic Field Painting location" />
+		<h4>Street view</h4>
+		<img src={`progress${constraints.id}.jpg`} alt="Algorithmic Field Painting in progress on-site" />
         <h4>Underpainting</h4>
 		<img src={`canvas${constraints.id}.png`} alt="Algorithmic Field Painting underpainting" />
       </div>

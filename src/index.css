@@ -178,6 +178,7 @@ ul {
 
 .bordered {
   border: 2px solid #111;
+  padding: 0 0 0 10px;
 }
 
 .footnote {
