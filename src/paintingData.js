@@ -273,6 +273,28 @@ const paintingData = [
 	dimensions: "25 x 9",
 	widths: "1, 3, 7, 8, 15, 25",
 	heights: "5, 7, 8, 9",
+  },
+  {
+    id: 26,
+	year: "2025",
+	boroughs: "Manhattan, Queens, The Bronx",
+	coordinates: "40.682491, -73.734137",
+	start: "8:47 AM",
+	paints: "titanium white, cadmium yellow light, alizarin crimson, chrome green, ivory black",
+	dimensions: "28 x 9",
+	widths: "2, 3, 9",
+	heights: "11, 12, 28",
+  },
+  {
+    id: 27,
+	year: "2025",
+	boroughs: "Manhattan, Queens, The Bronx",
+	coordinates: "40.778639, -73.892072",
+	start: "3:26 PM",
+	paints: "titanium white, yellow ochre",
+	dimensions: "28 x 38",
+	widths: "6, 10, 13, 15, 16, 17",
+	heights: "1, 29, 31, 32",
   }
 ]
 
