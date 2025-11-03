@@ -8,7 +8,7 @@ const Essay = ({ handleClose }) => {
   return (
   <>
     <div className="modal" onClick={event => closeModal(event)} >
-	  <div className="modalContainer large">
+	  <div className="modalContainer large" onClick={event => event.stopPropagation()} >
 		<h2>In the Algorithmic Field</h2>
 		<h3>Klay-James Enos</h3>
 		<center>
