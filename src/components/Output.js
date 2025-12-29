@@ -11,11 +11,13 @@ import Boroughs from '../boroughs.geojson';
 import * as turf from '@turf/turf';
 
 const Output = (props) => {
+  const [dec29Display, setDec29Display] = useState(false)
   const [time, setTime] = useState(props.time);
   const [coords, setCoords] = useState();
   const [paint, setPaint] = useState(props.paint);
   const [canvas, setCanvas] = useState(props.canvas);
 
+	console.log(props.time)
   const fetchCoords = async (chosenBoroughs) => {
     await fetch(Boroughs)
 	  .then((response) => response.json())
@@ -40,13 +42,23 @@ const Output = (props) => {
   }	
 	
   useEffect(() => {
-	let chosenBoroughs = Object.keys(props.chosenBoroughs).filter(key => props.chosenBoroughs[key]);
-	if (chosenBoroughs.length) { 
-	  fetchCoords(chosenBoroughs); 
+	let chosenBoroughs = Object.keys(props.chosenBoroughs).filter(key => props.chosenBoroughs[key]); 
+	console.log(chosenBoroughs)
+	const correctTime = props.time.start === "03:28" && props.time.end === "13:44" && chosenBoroughs.length === 2 && chosenBoroughs.includes("bronx") && chosenBoroughs.includes("manhattan")
+	if (correctTime) {
+	    setDec29Display(true)
+		setCoords([-73.987795, 40.742577])
+		setTime("7:00 PM")
 	}
-	setTime(props.time);
-	setPaint(props.paint);
-	setCanvas(props.canvas);
+	else {
+	  let chosenBoroughs = Object.keys(props.chosenBoroughs).filter(key => props.chosenBoroughs[key]);
+	  if (chosenBoroughs.length) { 
+	    fetchCoords(chosenBoroughs); 
+	  }
+	  setTime(props.time);
+	  setPaint(props.paint);
+	  setCanvas(props.canvas);
+	}
   }, [props.submitted]);
   
   let coordDisplay = '';
@@ -56,7 +68,7 @@ const Output = (props) => {
     coordDisplay = <CoordOutput coords={coords} />
 	mapDisplay = <Map coords={coords} />
   }
-  
+    
   if (time.start !== '' && time.end !== '') {
     timeDisplay = <Time time={time} submitted={props.submitted} />; 
   }	  
@@ -73,12 +85,13 @@ const Output = (props) => {
   
   return (
     <>
-	<h3>Painting constraints</h3>
+	<h3>{dec29Display ? "Meet her here:" : "Painting constraints"}</h3>
 	{coordDisplay}
 	{mapDisplay}
-	{timeDisplay}
-	{paintDisplay}
-	{canvasDisplay}
+	{dec29Display ? `At ${time}` : timeDisplay}
+	{dec29Display && "<3"}
+	{!dec29Display && paintDisplay}
+	{!dec29Display && canvasDisplay}
     < />
   );
 };
